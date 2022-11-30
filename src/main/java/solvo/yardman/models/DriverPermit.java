@@ -13,12 +13,13 @@ import javax.persistence.*;
 public class DriverPermit {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "driver_permit_seq")
-    @SequenceGenerator(name = "driver_permit_seq", sequenceName = "driver_permit_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // TODO sequence вернуть
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "driver_permit_seq")
+//    @SequenceGenerator(name = "driver_permit_seq", sequenceName = "driver_permit_seq")
     @Column(name = "id", nullable = false)
     private Long id;
 
-    //TODO поломать CascadeType
     @ManyToOne
     @JoinColumn(name = "driver_id", nullable = false)
     @JsonBackReference

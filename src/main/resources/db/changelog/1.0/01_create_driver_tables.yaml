@@ -1,0 +1,49 @@
+databaseChangeLog:
+- changeSet:
+    id:  adding driver
+    author:  Ivan
+    changes:
+      - createTable:
+          schemaName:  public
+          tableName:  driver
+          columns:
+            - column:
+                name: id
+                type: bigint
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name:  full_name
+                type:  varchar(255)
+            - column:
+                name: phone
+                type: varchar(32)
+            - column:
+                name: passport
+                type: varchar(32)
+            - column:
+                name: passport_issued_by
+                type: varchar(255)
+      - createTable:
+          schemaName:  public
+          tableName:  driver_permit
+          columns:
+            - column:
+                name: id
+                type: bigint
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name:  driver_id
+                type:  bigint
+                constraints:
+                  foreignKeyName: fk_permit_to_driver
+                  references: driver(id)
+                  deleteCascade: true
+            - column:
+                name: permit_id
+                type: varchar(255)

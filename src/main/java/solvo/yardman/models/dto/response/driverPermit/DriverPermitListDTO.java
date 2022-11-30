@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DriverPermitListDTO {
 
-    private final List<DriverPermitResponseDTO> driverPermitList;
+    private final List<DriverPermitResponseDTO> data;
 
     private final int size;
 }

@@ -17,8 +17,10 @@ public class Driver {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "driver_seq")
-    @SequenceGenerator(name = "driver_seq", sequenceName = "driver_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // TODO sequence вернуть
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "driver_seq")
+//    @SequenceGenerator(name = "driver_seq", sequenceName = "driver_seq")
     @Column(name = "id", nullable = false)
     private Long id;
 
@@ -35,8 +37,7 @@ public class Driver {
     @Column
     private String passportIssuedBy;
 
-    //TODO каскад liquibase
-    @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "driver")
     @JsonManagedReference
     private List<DriverPermit> permits;
 

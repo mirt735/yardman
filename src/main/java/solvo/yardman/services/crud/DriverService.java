@@ -7,7 +7,10 @@ import solvo.yardman.models.Driver;
 import solvo.yardman.models.dto.request.driver.DriverRequestDTO;
 import solvo.yardman.models.dto.response.driver.DriverListDTO;
 import solvo.yardman.models.dto.response.driver.DriverResponseDTO;
+import solvo.yardman.models.dto.response.driverPermit.DriverPermitListDTO;
+import solvo.yardman.models.dto.response.driverPermit.DriverPermitResponseDTO;
 import solvo.yardman.models.mappers.DriverMapper;
+import solvo.yardman.models.mappers.DriverPermitMapper;
 import solvo.yardman.repositories.DriverRepository;
 
 import java.util.List;
@@ -22,18 +25,21 @@ public class DriverService {
     @Autowired
     private DriverMapper driverMapper;
 
+    @Autowired
+    private DriverPermitMapper driverPermitMapper;
+
     public DriverListDTO list()
     {
         //TODO Page параметры передать извне
         List<DriverResponseDTO> response = driverRepository.findAll(PageRequest.of(0, 5))
-                .getContent().stream().map(driverMapper::driverToDriverResponseDTO).collect(Collectors.toList());
+                .getContent().stream().map(driverMapper::toResponseDTO).collect(Collectors.toList());
         return new DriverListDTO(response, response.size());
     }
 
     public DriverResponseDTO add(DriverRequestDTO requestBody)
     {
-        Driver driver = driverRepository.save(driverMapper.driverRequestDTOToDriver(requestBody));
-        return driverMapper.driverToDriverResponseDTO(driver);
+        Driver driver = driverRepository.save(driverMapper.toModel(requestBody));
+        return driverMapper.toResponseDTO(driver);
     }
 
     public DriverResponseDTO update(Long id, DriverRequestDTO requestBody)
@@ -45,7 +51,7 @@ public class DriverService {
                     driver.setPhone(requestBody.getPhone());
                     driver.setPassport(requestBody.getPassport());
                     driver.setPassportIssuedBy(requestBody.getPassportIssuedBy());
-                    return driverMapper.driverToDriverResponseDTO(driverRepository.save(driver));
+                    return driverMapper.toResponseDTO(driverRepository.save(driver));
                 })
             .orElseThrow(NullPointerException::new);
     }
@@ -57,6 +63,10 @@ public class DriverService {
 
     public DriverResponseDTO findById(Long id)
     {
-        return driverMapper.driverToDriverResponseDTO(driverRepository.findById(id).orElseThrow(NullPointerException::new));
+        Driver driver = driverRepository.findById(id).orElseThrow(NullPointerException::new);
+        List<DriverPermitResponseDTO> permitResponseDTOList = driver.getPermits().stream().map(driverPermitMapper::toResponseDTO).collect(Collectors.toList());
+        DriverResponseDTO driverResponseDTO = driverMapper.toResponseDTO(driver);
+        driverResponseDTO.setPermits(new DriverPermitListDTO(permitResponseDTOList, permitResponseDTOList.size()));
+        return driverResponseDTO;
     }
 }
