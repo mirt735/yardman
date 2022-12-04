@@ -1,0 +1,76 @@
+databaseChangeLog:
+- changeSet:
+    id:  adding car_type
+    author:  Andrey
+    changes:
+      - createTable:
+          schemaName:  public
+          tableName:  car_type
+          columns:
+            - column:
+                name: id
+                type: bigint
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name:  name
+                type:  varchar(255)
+            - column:
+                name: type
+                type: varchar(255)
+            - column:
+                name: capacity
+                type: real
+            - column:
+                name: volume
+                type: real
+            - column:
+                name: length
+                type: real
+            - column:
+                name: width
+                type: real
+            - column:
+                name: height
+                type: real
+            - column:
+                name: created
+                type: timestamp
+            - column:
+                name: modified
+                type: timestamp
+      - createTable:
+          schemaName:  public
+          tableName:  car
+          columns:
+            - column:
+                name: id
+                type: bigint
+                autoIncrement: true
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name:  car_type_id
+                type:  bigint
+                constraints:
+                  foreignKeyName: fk_car_to_car_type
+                  references: car_type(id)
+                  deleteCascade: true
+            - column:
+                name: reg_number
+                type: varchar(255)
+            - column:
+                name: carrier_id
+                type: bigint
+            - column:
+                name: last_driver_id
+                type: bigint
+            - column:
+                name: created
+                type: timestamp
+            - column:
+                name: modified
+                type: timestamp
