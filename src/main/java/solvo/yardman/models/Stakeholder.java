@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+//TODO добавить SDID
 @Entity
 @Table(name = "stakeholder")
 @Getter
@@ -28,13 +29,16 @@ public class Stakeholder {
     @Column
     private String phone;
 
+    //TODO переименовать в contact person name
     @Column(name = "contact_face")
     private String contactFace;
 
     @Column
     private String email;
 
+    //TODO добавить enum как "Организационно-правовая форма". Предзаполнить самыми распространенными - ИП, юр лица, гпх, самозанятость
     @Column
     private String type;
 
+    //TODO добавить ИНН
 }

@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
+//TODO добавить SDID
 @Entity
 @Table(name = "driver")
 @Getter
