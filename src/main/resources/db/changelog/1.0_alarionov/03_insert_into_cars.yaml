@@ -1,0 +1,32 @@
+databaseChangeLog:
+- changeSet:
+    id:  insert into car
+    author:  Andrey
+    changes:
+      - insert:
+          tableName:  car
+          columns:
+            - column:
+                name: car_type_id
+                value: 1
+            - column:
+                name: reg_number
+                value: "o090ya98"
+      - insert:
+          tableName: car
+          columns:
+            - column:
+                name: car_type_id
+                value: 1
+            - column:
+                name: reg_number
+                value: "o091ya98"
+      - insert:
+          tableName: car
+          columns:
+            - column:
+                name: car_type_id
+                value: 2
+            - column:
+                name: reg_number
+                value: "o092ya98"

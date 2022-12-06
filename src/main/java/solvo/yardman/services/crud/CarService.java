@@ -53,7 +53,6 @@ public class CarService {
                     car.setRegNumber(requestBody.getRegNumber());
                     car.setCarType(carType);
                     car.setCarrierId(requestBody.getCarrierId());
-                    car.setLastDriverId(requestBody.getLastDriverId());
                     return carMapper.toResponseDTO(carRepository.save(car));
                 })
             .orElseThrow(NullPointerException::new);

@@ -54,17 +54,15 @@ public class CarTypeService {
 
     public CarTypeResponseDTO update(Long id, CarTypeRequestDTO requestBody)
     {
-        List<Car> cars = (List<Car>) carRepository.findAllById(requestBody.getCarIds());
         return carTypeRepository.findById(id)
                 .map(carType ->
                 {
-                    carType.setType(requestBody.getType());
-                    carType.setCapacity(requestBody.getCapacity());
+                    carType.setKind(requestBody.getKind());
+                    carType.setLoadCapacity(requestBody.getLoadCapacity());
                     carType.setHeight(requestBody.getHeight());
                     carType.setLength(requestBody.getLength());
                     carType.setWidth(requestBody.getWidth());
                     carType.setName(requestBody.getName());
-                    carType.setCars(cars);
 
                     return carTypeMapper.toResponseDTO(carTypeRepository.save(carType));
                 })

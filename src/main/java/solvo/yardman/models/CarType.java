@@ -11,10 +11,7 @@ import java.util.List;
 @Table(name = "car_type")
 @Getter
 @Setter
-public class CarType {
-
-    public CarType() {
-    }
+public class CarType extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +21,11 @@ public class CarType {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "type")
-    private String type;
+    @Column(name = "kind")
+    private String kind;
 
-    @Column(name = "capacity")
-    private Double capacity;
+    @Column(name = "load_capacity")
+    private Double loadCapacity;
 
     @Column(name = "volume")
     private Double volume;
@@ -41,9 +38,5 @@ public class CarType {
 
     @Column(name = "height")
     private Double height;
-
-    @OneToMany(mappedBy = "catType")
-    @JsonManagedReference
-    private List<Car> cars;
 
 }

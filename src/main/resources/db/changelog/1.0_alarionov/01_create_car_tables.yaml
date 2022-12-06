@@ -15,26 +15,26 @@ databaseChangeLog:
                   primaryKey: true
                   nullable: false
             - column:
-                name:  name
-                type:  varchar(255)
-            - column:
-                name: type
+                name: name
                 type: varchar(255)
             - column:
-                name: capacity
-                type: real
+                name: kind
+                type: varchar(255)
+            - column:
+                name: load_capacity
+                type: double
             - column:
                 name: volume
-                type: real
+                type: double
             - column:
                 name: length
-                type: real
+                type: double
             - column:
                 name: width
-                type: real
+                type: double
             - column:
                 name: height
-                type: real
+                type: double
             - column:
                 name: created
                 type: timestamp
@@ -64,9 +64,6 @@ databaseChangeLog:
                 type: varchar(255)
             - column:
                 name: carrier_id
-                type: bigint
-            - column:
-                name: last_driver_id
                 type: bigint
             - column:
                 name: created

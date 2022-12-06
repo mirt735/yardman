@@ -14,6 +14,4 @@ public class CarRequestDTO {
 
     private Long carrierId;
 
-    private Long lastDriverId;
-
 }

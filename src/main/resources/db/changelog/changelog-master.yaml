@@ -1,5 +1,11 @@
 databaseChangeLog:
   - includeAll:
       path: db/changelog/1.0/
-  - includeAll:
-      path: db/changelog/1.0_morozov/
+  - include:
+      file: db/changelog/1.0_morozov/01_create_stakeholder_table.yaml
+  - include:
+      file: db/changelog/1.0_alarionov/01_create_car_tables.yaml
+  - include:
+      file: db/changelog/1.0_alarionov/02_insert_into_cartypes.yaml
+  - include:
+      file: db/changelog/1.0_alarionov/03_insert_into_cars.yaml

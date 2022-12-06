@@ -1,0 +1,53 @@
+databaseChangeLog:
+- changeSet:
+    id:  insert into car_type
+    author:  Andrey
+    changes:
+      - insert:
+          tableName:  car_type
+          columns:
+            - column:
+                name: name
+                value: "Газель"
+            - column:
+                name: kind
+                value: ""
+            - column:
+                name: load_capacity
+                value: 1.5
+            - column:
+                name: volume
+                value: 9.0
+            - column:
+                name: length
+                value: 2.8
+            - column:
+                name: width
+                value: 1.8
+            - column:
+                name: height
+                value: 1.7
+      - insert:
+          tableName: car_type
+          columns:
+            - column:
+                name: name
+                value: "ЗИЛ-Бычок"
+            - column:
+                name: kind
+                value: ""
+            - column:
+                name: load_capacity
+                value: 3.5
+            - column:
+                name: volume
+                value: 17.0
+            - column:
+                name: length
+                value: 3.7
+            - column:
+                name: width
+                value: 2.1
+            - column:
+                name: height
+                value: 2.2

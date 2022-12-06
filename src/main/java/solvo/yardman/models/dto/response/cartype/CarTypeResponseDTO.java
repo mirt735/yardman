@@ -14,9 +14,9 @@ public class CarTypeResponseDTO {
 
     private String name;
 
-    private String type;
+    private String kind;
 
-    private Double capacity;
+    private Double loadCapacity;
 
     private Double volume;
 
@@ -25,7 +25,5 @@ public class CarTypeResponseDTO {
     private Double width;
 
     private Double height;
-
-    private List<CarResponseDTO> cars;
 
 }
