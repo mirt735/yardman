@@ -1,14 +1,14 @@
 package solvo.yardman.services.crud;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import solvo.yardman.models.Driver;
 import solvo.yardman.models.dto.request.driver.DriverRequestDTO;
 import solvo.yardman.models.dto.response.driver.DriverListDTO;
 import solvo.yardman.models.dto.response.driver.DriverResponseDTO;
 import solvo.yardman.models.dto.response.driverPermit.DriverPermitListDTO;
 import solvo.yardman.models.dto.response.driverPermit.DriverPermitResponseDTO;
+import solvo.yardman.models.entities.Driver;
 import solvo.yardman.models.mappers.DriverMapper;
 import solvo.yardman.models.mappers.DriverPermitMapper;
 import solvo.yardman.repositories.DriverRepository;
@@ -17,16 +17,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class DriverService {
 
-    @Autowired
-    private DriverRepository driverRepository;
+    private final DriverRepository driverRepository;
 
-    @Autowired
-    private DriverMapper driverMapper;
+    private final DriverMapper driverMapper;
 
-    @Autowired
-    private DriverPermitMapper driverPermitMapper;
+    private final DriverPermitMapper driverPermitMapper;
 
     public DriverListDTO list()
     {

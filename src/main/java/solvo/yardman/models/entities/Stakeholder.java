@@ -1,4 +1,4 @@
-package solvo.yardman.models;
+package solvo.yardman.models.entities;
 
 import lombok.Getter;
 import lombok.Setter;

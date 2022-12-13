@@ -1,4 +1,4 @@
-package solvo.yardman.models;
+package solvo.yardman.models.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;

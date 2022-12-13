@@ -1,20 +1,19 @@
 package solvo.yardman.controllers.driver;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import solvo.yardman.models.dto.request.driver.DriverRequestDTO;
 import solvo.yardman.models.dto.response.driver.DriverListDTO;
 import solvo.yardman.models.dto.response.driver.DriverResponseDTO;
 import solvo.yardman.services.crud.DriverService;
-
 @Slf4j
 @RestController
+@RequiredArgsConstructor
 public class DriverController {
 
-    @Autowired
-    private DriverService driverService;
+    private final DriverService driverService;
 
     @GetMapping("/driver/list")
     public ResponseEntity<DriverListDTO> list()

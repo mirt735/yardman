@@ -1,12 +1,12 @@
 package solvo.yardman.services.crud;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import solvo.yardman.models.Stakeholder;
 import solvo.yardman.models.dto.request.stakeholder.StakeholderRequestDTO;
 import solvo.yardman.models.dto.response.stakeholder.StakeholderListDTO;
 import solvo.yardman.models.dto.response.stakeholder.StakeholderResponseDTO;
+import solvo.yardman.models.entities.Stakeholder;
 import solvo.yardman.models.mappers.StakeholderMapper;
 import solvo.yardman.repositories.StakeholderRepository;
 
@@ -14,13 +14,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class StakeholderService {
 
-    @Autowired
-    private StakeholderRepository stakeholderRepository;
+    private final StakeholderRepository stakeholderRepository;
 
-    @Autowired
-    private StakeholderMapper stakeholderMapper;
+    private final StakeholderMapper stakeholderMapper;
 
     public StakeholderListDTO list()
     {

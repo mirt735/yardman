@@ -1,5 +1,15 @@
 databaseChangeLog:
-  - includeAll:
-      path: db/changelog/1.0/
-  - includeAll:
-      path: db/changelog/1.0_morozov/
+  - include:
+      file: db/changelog/1.0/isemenov/01_create_driver_tables.yaml
+  - include:
+      file: db/changelog/1.0/imorozov/01_create_stakeholder_table.yaml
+  - include:
+      file: db/changelog/1.0/alarionov/01_create_car_tables.yaml
+  - include:
+      file: db/changelog/1.0/alarionov/02_insert_into_cartypes.sql
+  - include:
+      file: db/changelog/1.0/alarionov/03_insert_into_cars.sql
+  - include:
+      file: db/changelog/1.0/isemenov/02_insert_into_driver.sql
+  - include:
+      file: db/changelog/1.0/isemenov/03_insert_into_driver_permit.sql
