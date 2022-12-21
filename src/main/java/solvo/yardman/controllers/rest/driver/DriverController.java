@@ -1,4 +1,4 @@
-package solvo.yardman.controllers.driver;
+package solvo.yardman.controllers.rest.driver;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +11,7 @@ import solvo.yardman.services.crud.DriverService;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class DriverController {
 
     private final DriverService driverService;

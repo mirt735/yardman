@@ -1,4 +1,4 @@
-package solvo.yardman.controllers.car;
+package solvo.yardman.controllers.rest.car;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +12,7 @@ import solvo.yardman.services.crud.CarTypeService;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class CarTypeController {
 
     private final CarTypeService carTypeService;

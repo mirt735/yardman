@@ -1,4 +1,4 @@
-package solvo.yardman.controllers.driver;
+package solvo.yardman.controllers.rest.driver;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,7 @@ import solvo.yardman.services.crud.DriverPermitService;
 
 @Slf4j
 @RestController
+@RequestMapping("/api")
 public class DriverPermitController {
 
     @Autowired

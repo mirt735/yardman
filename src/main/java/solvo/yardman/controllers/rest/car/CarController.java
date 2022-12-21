@@ -1,4 +1,4 @@
-package solvo.yardman.controllers.car;
+package solvo.yardman.controllers.rest.car;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,8 +10,9 @@ import solvo.yardman.models.dto.response.car.CarResponseDTO;
 import solvo.yardman.services.crud.CarService;
 
 @Slf4j
-@RestController
+@RestController(value = "RestCarController")
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class CarController {
 
     private final CarService carService;
