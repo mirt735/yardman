@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head"></head>
+<header th:replace="fragments::header"></header>
+<body>
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Kind</th>
+        <th scope="col">Load Capacity</th>
+        <th scope="col">Volume</th>
+        <th scope="col">Length</th>
+        <th scope="col">Width</th>
+        <th scope="col">Height</th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="type : ${carTypes}">
+        <tr>
+          <td th:text="${type.id}">...</td>
+          <td th:text="${type.name}">...</td>
+          <td th:text="${type.kind}">...</td>
+          <td th:text="${type.loadCapacity}">...</td>
+          <td th:text="${type.volume}">...</td>
+          <td th:text="${type.length}">...</td>
+          <td th:text="${type.width}">...</td>
+          <td th:text="${type.height}">...</td>
+        </tr>
+      </th:block>
+      </tbody>
+    </table>
+  </div>
+</main>
+</body>
+<footer th:replace="fragments::footer"></footer>
+</html>

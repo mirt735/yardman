@@ -26,7 +26,6 @@ public class Car extends BaseEntity {
     private String regNumber;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
     @JoinColumn(name = "car_type_id", nullable = false)
     @ToString.Exclude
     private CarType carType;

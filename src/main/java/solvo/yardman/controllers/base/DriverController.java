@@ -5,22 +5,22 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import solvo.yardman.models.dto.response.car.CarListDTO;
-import solvo.yardman.services.crud.CarService;
+import solvo.yardman.models.dto.response.driver.DriverListDTO;
+import solvo.yardman.services.crud.DriverService;
 
 @Slf4j
-@Controller(value = "CarController")
+@Controller(value = "DriverController")
 @RequiredArgsConstructor
-public class CarController {
+public class DriverController {
 
-    private final CarService carService;
+    private final DriverService driverService;
 
-    @GetMapping("/car/list")
+    @GetMapping("/driver/list")
     public String list(Model model)
     {
-        String pageName = "cars";
-        CarListDTO cars = carService.list();
-        model.addAttribute("cars", cars.getCarList());
+        String pageName = "drivers";
+        DriverListDTO drivers = driverService.list();
+        model.addAttribute("drivers", drivers.getDriverList());
         model.addAttribute("currentPageName", pageName);
 
         return pageName;

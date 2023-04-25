@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head"></head>
+<header th:replace="fragments::header"></header>
+<body>
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Short name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Contact face</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Type</th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="stakeholder : ${stakeholders}">
+        <tr>
+          <td th:text="${stakeholder.id}">...</td>
+          <td th:text="${stakeholder.fullName}">...</td>
+          <td th:text="${stakeholder.shortName}">...</td>
+          <td th:text="${stakeholder.phone}">...</td>
+          <td th:text="${stakeholder.contactFace}">...</td>
+          <td th:text="${stakeholder.email}">...</td>
+          <td th:text="${stakeholder.type}">...</td>
+        </tr>
+      </th:block>
+      </tbody>
+    </table>
+  </div>
+</main>
+</body>
+<footer th:replace="fragments::footer"></footer>
+</html>

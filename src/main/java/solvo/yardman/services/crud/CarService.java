@@ -26,7 +26,7 @@ public class CarService {
     private final CarMapper carMapper;
     private final CarTypeMapper carTypeMapper;
 
-    public CarListDTO getAll()
+    public CarListDTO list()
     {
         List<CarResponseDTO> response = carRepository.findAll(PageRequest.of(0, 5))
                 .getContent().stream().map(carMapper::toResponseDTO).collect(Collectors.toList());

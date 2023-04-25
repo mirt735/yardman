@@ -14,8 +14,7 @@ import java.util.List;
 @Setter
 public class Driver {
 
-    public Driver() {
-    }
+    public Driver() {}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,8 +40,5 @@ public class Driver {
     @OneToMany(mappedBy = "driver")
     @JsonManagedReference
     private List<DriverPermit> permits;
-
-
-
 
 }

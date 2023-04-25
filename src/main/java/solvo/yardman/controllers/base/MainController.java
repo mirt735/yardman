@@ -12,6 +12,8 @@ public class MainController {
     @GetMapping("/")
     public String main(Model model)
     {
-        return "home";
+        String pageName = "home";
+        model.addAttribute("currentPageName", pageName);
+        return pageName;
     }
 }

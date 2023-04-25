@@ -20,7 +20,7 @@ public class CarController {
     @GetMapping("/car/list")
     public ResponseEntity<CarListDTO> list()
     {
-        return ResponseEntity.ok().body(carService.getAll());
+        return ResponseEntity.ok().body(carService.list());
     }
 
     @GetMapping("/car/list/{type_id}")

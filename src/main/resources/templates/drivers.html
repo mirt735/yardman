@@ -10,18 +10,20 @@
       <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">RegNumber</th>
-        <th scope="col">Type</th>
-        <th scope="col">Carrier ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Passport</th>
+        <th scope="col">Issued By</th>
       </tr>
       </thead>
       <tbody>
-      <th:block th:each="car : ${cars}">
+      <th:block th:each="driver : ${drivers}">
         <tr>
-          <td th:text="${car.id}">...</td>
-          <td th:text="${car.regNumber}">...</td>
-          <td th:text="${car.carType.name}">...</td>
-          <td th:text="${car.carrierId}">...</td>
+          <td th:text="${driver.id}">...</td>
+          <td th:text="${driver.fullName}">...</td>
+          <td th:text="${driver.phone}">...</td>
+          <td th:text="${driver.passport}">...</td>
+          <td th:text="${driver.passportIssuedBy}">...</td>
         </tr>
       </th:block>
       </tbody>
