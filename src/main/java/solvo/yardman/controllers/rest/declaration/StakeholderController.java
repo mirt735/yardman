@@ -1,12 +1,12 @@
-package solvo.yardman.controllers.rest.stakeholder;
+package solvo.yardman.controllers.rest.declaration;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import solvo.yardman.models.dto.request.stakeholder.StakeholderRequestDTO;
-import solvo.yardman.models.dto.response.stakeholder.StakeholderListDTO;
-import solvo.yardman.models.dto.response.stakeholder.StakeholderResponseDTO;
+import solvo.yardman.models.dto.request.declaration.StakeholderRequestDTO;
+import solvo.yardman.models.dto.response.declaration.StakeholderListDTO;
+import solvo.yardman.models.dto.response.declaration.StakeholderResponseDTO;
 import solvo.yardman.services.crud.StakeholderService;
 
 @Slf4j

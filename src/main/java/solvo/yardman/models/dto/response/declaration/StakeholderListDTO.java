@@ -1,4 +1,4 @@
-package solvo.yardman.models.dto.response.stakeholder;
+package solvo.yardman.models.dto.response.declaration;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

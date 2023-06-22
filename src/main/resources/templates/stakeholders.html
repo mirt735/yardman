@@ -19,15 +19,15 @@
       </tr>
       </thead>
       <tbody>
-      <th:block th:each="stakeholder : ${stakeholders}">
+      <th:block th:each="declaration : ${stakeholders}">
         <tr>
-          <td th:text="${stakeholder.id}">...</td>
-          <td th:text="${stakeholder.fullName}">...</td>
-          <td th:text="${stakeholder.shortName}">...</td>
-          <td th:text="${stakeholder.phone}">...</td>
-          <td th:text="${stakeholder.contactFace}">...</td>
-          <td th:text="${stakeholder.email}">...</td>
-          <td th:text="${stakeholder.type}">...</td>
+          <td th:text="${declaration.id}">...</td>
+          <td th:text="${declaration.fullName}">...</td>
+          <td th:text="${declaration.shortName}">...</td>
+          <td th:text="${declaration.phone}">...</td>
+          <td th:text="${declaration.contactFace}">...</td>
+          <td th:text="${declaration.email}">...</td>
+          <td th:text="${declaration.type}">...</td>
         </tr>
       </th:block>
       </tbody>

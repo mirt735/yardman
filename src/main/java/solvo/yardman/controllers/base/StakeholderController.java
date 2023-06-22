@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import solvo.yardman.models.dto.response.stakeholder.StakeholderListDTO;
+import solvo.yardman.models.dto.response.declaration.StakeholderListDTO;
 import solvo.yardman.services.crud.StakeholderService;
 
 @Slf4j
