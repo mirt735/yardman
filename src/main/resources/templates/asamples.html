@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head"></head>
+<header th:replace="fragments::header"></header>
+<body>
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table ">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Sample string field</th>
+        <th scope="col">Sample integer field</th>
+        <th scope="col">Sample date field</th>
+        <th scope="col">Sample time field</th>
+        <th scope="col">Sample boolean field</th>
+        <th scope="col">Sample email field</th>
+        <th scope="col">Sample integer select field</th>
+        <th scope="col">Sample string select field</th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="asample : ${aSampleList}">
+        <tr>
+          <td>
+            <a th:href = "@{/asample/edit/{id}(id=${asample.id})}" class = "btn btn-primary">Update</a>
+            <a th:href = "@{/asample/{id}(id=${asample.id})}" class = "btn btn-danger">Delete</a>
+          </td>
+          <td th:text="${asample.sampleString}">...</td>
+          <td th:text="${asample.sampleInteger}">...</td>
+          <td th:text="${asample.sampleDate}">...</td>
+          <td th:text="${asample.sampleTime}">...</td>
+          <td th:text="${asample.sampleBoolean}">...</td>
+          <td th:text="${asample.sampleEmail}">...</td>
+          <td th:text="${asample.sampleIntegerSelectValue}">...</td>
+          <td th:text="${asample.sampleStringSelectValue}">...</td>
+        </tr>
+      </th:block>
+      </tbody>
+    </table>
+    </div>
+    <div th:if="${totalPages > 1}">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" th:if="${currentPage > 1}">
+            <a class="page-link" th:href="@{'/asample/list/page/' + ${currentPage - 1}}">Previous</a>
+          </li>
+          <li class="page-item disabled" th:unless="${currentPage > 1}">
+            <span class="page-link">Previous</span>
+          </li>
+          <!--          -->
+          <li class="page-item" th:classappend="${currentPage == i ? 'active' : ''}" th:each="i: ${#numbers.sequence(1, totalPages)}" >
+            <a th:if="${currentPage != i}" class="page-link" th:href="@{'/asample/list/page/' + ${i}}">[[${i}]]</a>
+            <span th:unless="${currentPage != i}" class="page-link">[[${i}]]</span>
+          </li>
+          <!--          -->
+          <li class="page-item" th:if="${currentPage < totalPages}">
+            <a class="page-link" th:href="@{'/asample/list/page/' + ${currentPage + 1}}">Next</a>
+          </li>
+          <li class="page-item disabled" th:unless="${currentPage < totalPages}">
+            <span class="page-link">Next</span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</main>
+</body>
+<footer th:replace="fragments::footer"></footer>
+</html>

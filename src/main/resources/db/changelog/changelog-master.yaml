@@ -13,3 +13,5 @@ databaseChangeLog:
       file: db/changelog/1.0/isemenov/02_insert_into_driver.sql
   - include:
       file: db/changelog/1.0/isemenov/03_insert_into_driver_permit.sql
+  - include:
+      file: db/changelog/1.0/isemenov/04_create_sample_table.yaml

@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id:  adding aSample table
+      author:  Ivan
+      changes:
+        - createTable:
+            schemaName: public
+            tableName: a_sample
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: sample_string
+                  type: varchar(255)
+              - column:
+                  name: sample_integer
+                  type: bigint
+              - column:
+                  name: sample_date
+                  type: timestamp
+              - column:
+                  name: sample_time
+                  type: timestamp
+              - column:
+                  name: sample_boolean
+                  type: boolean
+              - column:
+                  name: sample_email
+                  type: varchar(32)
+              - column:
+                  name: sample_integer_select_value
+                  type: bigint
+              - column:
+                  name: sample_string_select_value
+                  type: varchar(32)

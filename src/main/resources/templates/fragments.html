@@ -24,13 +24,16 @@
             <a th:class="'nav-link '+${ currentPageName == 'cars' ? 'active' : ''}" href="/car/list">Cars</a>
           </li>
           <li class="nav-item">
+            <a th:class="'nav-link '+${ currentPageName == 'asamples' ? 'active' : ''}" href="/asample/list">Cars</a>
+          </li>
+          <li class="nav-item">
             <a th:class="'nav-link '+${ currentPageName == 'carTypes' ? 'active' : ''}" href="/carType/list">Car Types</a>
           </li>
           <li class="nav-item">
             <a th:class="'nav-link '+${ currentPageName == 'drivers' ? 'active' : ''}" href="/driver/list">Drivers</a>
           </li>
           <li class="nav-item">
-            <a th:class="'nav-link '+${ currentPageName == 'stakeholders' ? 'active' : ''}" href="/declaration/list">Stakeholders</a>
+            <a th:class="'nav-link '+${ currentPageName == 'stakeholders' ? 'active' : ''}" href="/stakeholders/list">Stakeholders</a>
           </li>
         </ul>
       </div>

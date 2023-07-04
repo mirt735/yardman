@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head"></head>
+<header th:replace="fragments::header"></header>
+<body>
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+  <div class="container">
+    <form th:action="@{/asample/list}" th:object = "${asample}" method="POST">
+      <div class ="form-group">
+        <label>Sample string field</label>
+        <input type = "text"
+                name = "sampleString"
+                th:field = "*{sampleString}"
+                class = "form-control"
+                placeholder="Enter sample string value"/>
+      </div>
+
+      <div class ="form-group">
+        <label>Sample integer field</label>
+        <input type = "number"
+               name = "sampleInteger"
+               th:field = "*{sampleInteger}"
+               class = "form-control"
+               placeholder="Enter sample integer value"/>
+      </div>
+
+      <div class ="form-group">
+        <label>Sample date field</label>
+        <input type = "date"
+               name = "sampleDate"
+               th:field = "*{sampleDate}"
+               class = "form-control"/>
+      </div>
+
+      <div class ="form-group">
+        <label>Sample time field</label>
+        <input type = "time"
+               name = "sampleTime"
+               th:field = "*{sampleTime}"
+               class = "form-control"/>
+      </div>
+
+      <div class ="form-group">
+        <label>Sample boolean field</label>
+        <input type = "checkbox"
+               name = "sampleBoolean"
+               th:field = "*{sampleBoolean}"
+               class = "form-control"/>
+      </div>
+
+      <div class ="form-group">
+        <label>Sample email field</label>
+        <input type = "text"
+               name = "sampleEmail"
+               th:field = "*{sampleEmail}"
+               class = "form-control"
+               placeholder="Enter sample email value"/>
+      </div>
+
+      <div class = "box-footer">
+        <button type="submit" class = "btn btn-primary">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</main>
+</body>
+<footer th:replace="fragments::footer"></footer>
+</html>
